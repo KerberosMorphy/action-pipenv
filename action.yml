@@ -8,14 +8,15 @@ inputs:
   working-directory:
     description: 'working directory'
     required: false 
-    default: './'
+    default: ''
 
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  env:
+    WORKING_DIRECTORY: ${{ inputs.working-directory }}
   args:
     - ${{ inputs.command }}
-    - ${{ inputs.working-directory }}
 
 branding:
   icon: 'package'
