@@ -1,3 +1,3 @@
 #!/bin/sh
 
-sh -c "./$WORKING_DIRECTORY pipenv $*"
+sh -c "echo $(ls -la) && cd $WORKING_DIRECTORY && echo $(ls -la) && pipenv $*"
