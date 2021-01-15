@@ -5,12 +5,17 @@ inputs:
   command:
     description: 'pipenv command and its argument to be executed'
     required: true 
+  working-directory:
+    description: 'working directory'
+    required: false 
+    default: './'
 
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
     - ${{ inputs.command }}
+    - ${{ inputs.working-directory }}
 
 branding:
   icon: 'package'
